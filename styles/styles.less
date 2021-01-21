@@ -1,0 +1,53 @@
+// css variables
+
+:root {
+    --main-blue: rgba(0, 55, 100, 1);
+    --salad-green: rgba(1, 1, 1, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Signika Negative', 'Open Sans', sans-serif;
+}
+
+.centered {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+// header
+
+.main-header {
+    height: 104px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header-logo {
+    display: block;
+    margin-top: 46px;
+    padding-top: 20px;
+}
+
+.main-header-nav {
+    ul {
+        display: flex;
+        list-style: none;
+        li {
+            width: 120px;
+            text-align: center;
+            a {
+                display: block;
+                margin-top: 46px;
+                padding-top: 20px;
+                font-size: 13px;
+                font-weight: 600;
+                color: var(--main-blue);
+                text-transform: uppercase;
+                text-decoration: none;
+            }
+        }
+    }
+}
