@@ -21,7 +21,18 @@ function onYouTubePlayerAPIReady() {
 
 var config = {
   type: 'carousel',
-  perView: 4
+  perView: 4,
+  breakpoints: {
+    1200: {
+      perView: 3
+    },
+    860: {
+      perView: 2
+    },
+    680: {
+      perView: 1
+    }
+  }
 }; // creator's scripts
 
 var mainPopup = document.querySelector('.popup-hidden');
@@ -35,6 +46,14 @@ document.querySelector('body').addEventListener('click', function (event) {
     mainPopupImgPrev.style.display = 'none';
     mainPopupVid.style.display = 'block';
     return;
+  } else if (event.target.matches('.showcase-gallery__element img')) {
+    mainPopup.classList.toggle('popup-hidden');
+    mainPopup.classList.toggle('popup-active');
+    mainPopupImgPrev.style.display = 'block';
+    mainPopupVid.style.display = 'none';
+    var imgSrc = event.target.getAttribute('src');
+    mainPopupImg.src = imgSrc;
+    return;
   } else if (event.target.classList.contains('popup-active') || event.target.classList.contains('close-icon')) {
     mainPopup.classList.toggle('popup-hidden');
     mainPopup.classList.toggle('popup-active');
@@ -42,16 +61,12 @@ document.querySelector('body').addEventListener('click', function (event) {
     mainPopupVid.style.display = 'block';
     player.stopVideo();
     return;
-  } else if (event.target.matches('.showcase-gallery__element img')) {
-    mainPopup.classList.toggle('popup-hidden');
-    mainPopup.classList.toggle('popup-active');
-    mainPopupImgPrev.style.display = 'block';
-    mainPopupVid.style.display = 'none';
-    var imgSrc = event.target.getAttribute('src');
-    mainPopupImg.src = imgSrc; // mainPopupImg.setAttribute('src', imgSrc);
-    // console.log(event.target.getAttribute('src'));
-    // alert('клик');
-
-    return;
+  } else if (event.target.classList.contains('hamburger') || event.target.classList.contains('hamburger-box') || event.target.classList.contains('hamburger-inner')) {
+    var burgerBtn = document.querySelector('.hamburger');
+    var mobileMenu = document.querySelector('.main-header-nav');
+    burgerBtn.classList.toggle('hamburger--spin-r');
+    burgerBtn.classList.toggle('is-active');
+    mobileMenu.classList.toggle('open-menu'); // alert('нажал бургер');
+    // return;
   }
 });
