@@ -24,15 +24,35 @@ let config = {
 
 // creator's scripts
 
-let videoPopup = document.querySelector('.video');
+let mainPopup = document.querySelector('.popup-hidden');
+let mainPopupVid = document.querySelector('.popup-active__video');
+let mainPopupImgPrev = document.querySelector('.popup-active__image');
+let mainPopupImg = document.querySelector('.popup-active__image img');
 
 document.querySelector('body').addEventListener('click', event => {
-    if(event.target.className === 'video-preview__window') {
-        videoPopup.classList.toggle('video');
-        videoPopup.classList.toggle('video-active');
-    } else if(event.target.className === 'video-active') {
-        videoPopup.classList.toggle('video');
-        videoPopup.classList.toggle('video-active');
+    if(event.target.matches('.video-preview__window')) {
+        mainPopup.classList.toggle('popup-hidden');
+        mainPopup.classList.toggle('popup-active');
+        mainPopupImgPrev.style.display = 'none';
+        mainPopupVid.style.display = 'block';
+        return;
+    } else if(event.target.classList.contains('popup-active') || event.target.classList.contains('close-icon')) {
+        mainPopup.classList.toggle('popup-hidden');
+        mainPopup.classList.toggle('popup-active');
+        mainPopupImgPrev.style.display = 'block';
+        mainPopupVid.style.display = 'block';
         player.stopVideo();
+        return;
+    } else if(event.target.matches('.showcase-gallery__element img')) {
+        mainPopup.classList.toggle('popup-hidden');
+        mainPopup.classList.toggle('popup-active');
+        mainPopupImgPrev.style.display = 'block';
+        mainPopupVid.style.display = 'none';
+        let imgSrc = event.target.getAttribute('src');
+        mainPopupImg.src = imgSrc;
+        // mainPopupImg.setAttribute('src', imgSrc);
+        // console.log(event.target.getAttribute('src'));
+        // alert('клик');
+        return;
     }
 })

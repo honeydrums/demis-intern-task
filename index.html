@@ -135,14 +135,14 @@
                 </div>
                 <p class="load-text">Download 30-day trial version via Appstore</p>
                 <div class="purchase-btns">
-                    <button class="download-btn">download free</button>
-                    <button class="buy-btn">buy for $11</button>
+                    <button class="download-btn"><a href="https://apps.apple.com/app/apple-store/id1512328590?mt=8" target="_blank" rel="nofollow">download free</a></button>
+                    <button class="buy-btn"><a href="https://apps.apple.com/app/apple-store/id1512328590?mt=8" target="_blank" rel="nofollow">buy for $11</a></button>
                 </div>
             </section>
         </div>
         <div class="about-block centered">
             <section class="features">
-                <h2 class="features-title dotted-through-line">Best features</h2>
+                <h2 class="about-title features-title dotted-through-line">Best features</h2>
                 <ul class="features-list">
                     <li class="feature-element">
                         <div class="img-wrap">
@@ -186,6 +186,73 @@
                     </li>
                 </ul>
             </section>
+            <div class="about-columns">
+                <section class="showcase">
+                    <h2 class="about-title dotted-through-line showcase-title">Showcase</h2>
+                    <ol class="showcase-gallery">
+                        <li class="showcase-gallery__element">
+                            <img src="https://clck.ru/Sw4BA" alt="showcase image" width="185" height="132">
+                        </li>
+                        <li class="showcase-gallery__element">
+                            <img src="https://clck.ru/Sw8a7" alt="showcase image" width="185" height="132">
+                        </li>
+                        <li class="showcase-gallery__element">
+                            <img src="https://clck.ru/Sw4BA" alt="showcase image" width="185" height="132">
+                        </li>
+                        <li class="showcase-gallery__element">
+                            <img src="https://clck.ru/Sw4BA" alt="showcase image" width="185" height="132">
+                        </li>
+                    </ol>
+                </section>
+                <section class="news">
+                    <h2 class="about-title dotted-through-line news-title">News</h2>
+                    <ul class="news-list">
+                        <li class="news-list__element">
+                            <time datetime="2013-12-22">
+                                <span class="time-day">22</span>
+                                <span class="time-month">December</span>
+                                <span class="time-year">2013</span>
+                            </time>
+                            <div class="news-card">
+                                <p class="news-card__text">
+                                    <span class="news-card__title">Vestibulum id ligula porta felis euismod</span>
+                                    semper. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem
+                                </p>
+                                <a href="#" class="news-card__detailed">Read more</a>
+                            </div>
+                        </li>
+                        <li class="news-list__element">
+                            <time datetime="2013-12-14">
+                                <span class="time-day">14</span>
+                                <span class="time-month">December</span>
+                                <span class="time-year">2013</span>
+                            </time>
+                            <div class="news-card">
+                                <p class="news-card__text">
+                                    <span class="news-card__title">Vestibulum id ligula porta felis euismod</span>
+                                    semper. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem
+                                </p>
+                                <a href="#" class="news-card__detailed">Read more</a>
+                            </div>
+                        </li>
+                        <li class="news-list__element">
+                            <time datetime="2013-12-01">
+                                <span class="time-day">01</span>
+                                <span class="time-month">December</span>
+                                <span class="time-year">2013</span>
+                            </time>
+                            <div class="news-card">
+                                <p class="news-card__text">
+                                    <span class="news-card__title">Vestibulum id ligula porta felis euismod</span>
+                                    semper. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem
+                                </p>
+                                <a href="#" class="news-card__detailed">Read more</a>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <h2 class="about-title slider-title dotted-through-line">What people say</h2>
         </div>
         <div class="slider-wrapper">
             <div class="glide centered">
@@ -292,16 +359,20 @@
             </li>
         </ul>
     </footer>
-    <div class="video" title="Кликни сюда чтобы закрыть видео">
-        <div class="video-active-popup">
+    <div class="popup-hidden" title="Кликни сюда чтобы закрыть попап">
+        <span class="close-icon" aria-label="close icon"></span>
+        <div class="popup-active__video">
             <div id="ytplayer"></div>
         </div>
+        <div class="popup-active__image">
+            <img alt="Увеличенное изображение" width="860" height="420">
+        </div>
     </div>
-    <script src="/scripts/dist/script.prod.js"></script>
+    <script src="/scripts/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+    <script src="/scripts/glide.min.js"></script>
     <script>
-    new Glide('.glide', config).mount();
+        new Glide('.glide', config).mount();
     </script>
 </body>
 </html>

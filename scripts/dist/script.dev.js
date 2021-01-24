@@ -24,14 +24,34 @@ var config = {
   perView: 4
 }; // creator's scripts
 
-var videoPopup = document.querySelector('.video');
+var mainPopup = document.querySelector('.popup-hidden');
+var mainPopupVid = document.querySelector('.popup-active__video');
+var mainPopupImgPrev = document.querySelector('.popup-active__image');
+var mainPopupImg = document.querySelector('.popup-active__image img');
 document.querySelector('body').addEventListener('click', function (event) {
-  if (event.target.className === 'video-preview__window') {
-    videoPopup.classList.toggle('video');
-    videoPopup.classList.toggle('video-active');
-  } else if (event.target.className === 'video-active') {
-    videoPopup.classList.toggle('video');
-    videoPopup.classList.toggle('video-active');
+  if (event.target.matches('.video-preview__window')) {
+    mainPopup.classList.toggle('popup-hidden');
+    mainPopup.classList.toggle('popup-active');
+    mainPopupImgPrev.style.display = 'none';
+    mainPopupVid.style.display = 'block';
+    return;
+  } else if (event.target.classList.contains('popup-active') || event.target.classList.contains('close-icon')) {
+    mainPopup.classList.toggle('popup-hidden');
+    mainPopup.classList.toggle('popup-active');
+    mainPopupImgPrev.style.display = 'block';
+    mainPopupVid.style.display = 'block';
     player.stopVideo();
+    return;
+  } else if (event.target.matches('.showcase-gallery__element img')) {
+    mainPopup.classList.toggle('popup-hidden');
+    mainPopup.classList.toggle('popup-active');
+    mainPopupImgPrev.style.display = 'block';
+    mainPopupVid.style.display = 'none';
+    var imgSrc = event.target.getAttribute('src');
+    mainPopupImg.src = imgSrc; // mainPopupImg.setAttribute('src', imgSrc);
+    // console.log(event.target.getAttribute('src'));
+    // alert('клик');
+
+    return;
   }
 });
