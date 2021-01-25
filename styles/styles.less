@@ -44,6 +44,7 @@ body {
         left: 0;
         width: 200px;
         border-right: 1px solid @main-blue;
+        border-bottom: 1px solid @main-blue;
     }
     // hamburger
     .hamburger {
@@ -195,6 +196,7 @@ body {
         margin-right: -20px;
         @media (max-width: 420px) {
             width: 120px;
+            height: auto;
         }
     }
     ul:extend(.flex-row) {
@@ -281,7 +283,7 @@ body {
     list-style: none;
     margin-bottom: 54px;
     @media (max-width: 680px) {
-        margin-bottom: 35px;
+        margin: 0 auto 35px;
     }
 }
 
@@ -339,7 +341,7 @@ body {
     width: 345px;
     margin: 0 0 30px;
     @media (max-width: 680px) {
-        width: 315px;
+        width: initial;
         margin: 0 auto;
         flex-direction: column-reverse;
     }
@@ -373,7 +375,7 @@ body {
     color: white;
     margin: 0 8px 8px 0;
     @media (max-width: 680px) {
-        margin: 15px auto;
+        margin: 0 auto 15px;
     }
 }
 .purchase-btns {

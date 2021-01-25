@@ -49,6 +49,7 @@ body {
     left: 0;
     width: 200px;
     border-right: 1px solid #003764;
+    border-bottom: 1px solid #003764;
   }
   .hamburger {
     padding: 15px 15px;
@@ -182,6 +183,7 @@ body {
 @media (max-width: 680px) and (max-width: 420px) {
   .main-header-nav {
     width: 120px;
+    height: auto;
   }
 }
 .main-header-nav ul {
@@ -264,7 +266,7 @@ body {
 }
 @media (max-width: 680px) {
   .social-icons {
-    margin-bottom: 35px;
+    margin: 0 auto 35px;
   }
 }
 .social-icon {
@@ -325,7 +327,7 @@ body {
 }
 @media (max-width: 680px) {
   .video-preview {
-    width: 315px;
+    width: initial;
     margin: 0 auto;
     flex-direction: column-reverse;
   }
@@ -364,7 +366,7 @@ body {
 }
 @media (max-width: 680px) {
   .load-text {
-    margin: 15px auto;
+    margin: 0 auto 15px;
   }
 }
 @media (max-width: 680px) {
